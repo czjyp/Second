@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/topBarBgColor">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/near_by_address_icon"
+                android:contentDescription="@string/xiaoqu" />
+
+            <TextView
+                android:id="@+id/current_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="@string/str_default_address"
+                android:textColor="@color/colorTitle"
+                android:visibility="gone" />
+
+            <Spinner
+                android:id="@+id/current_xiaoqu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:entries="@array/xiaoqu"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/near_by_item_mode"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/near_by_item_list"
+            android:contentDescription="@string/kind_sort" />
+
+        <ImageView
+            android:id="@+id/near_by_search_imageview"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/near_by_item_mode"
+            android:src="@mipmap/search_icon"
+            android:contentDescription="@string/str_search_hint" />
+    </RelativeLayout>
+
+    <com.yhy.tpg.widget.TpgView
+        android:id="@+id/NearBy_TpgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:expand_visible="gone"
+        app:tabGravity="fill"
+        app:tabMode="fixed" />
+
+</LinearLayout>
